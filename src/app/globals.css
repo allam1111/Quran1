@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+:root {
+  --background: 230 40% 4%;
+  --foreground: 210 40% 98%;
+  
+  --card: 230 40% 6%;
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 230 40% 4%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 43 96% 58%; /* Golden Yellow */
+  --primary-foreground: 230 40% 4%;
+  
+  --secondary: 162 84% 35%; /* Emerald */
+  --secondary-foreground: 210 40% 98%;
+  
+  --accent: 230 40% 12%;
+  --accent-foreground: 210 40% 98%;
+  
+  --border: 230 40% 15%;
+  --input: 230 40% 15%;
+  --ring: 43 96% 58%;
+  
+  --radius: 1.5rem;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-secondary: hsl(var(--secondary));
+  --color-accent: hsl(var(--accent));
+  --color-card: hsl(var(--card));
+  --color-border: hsl(var(--border));
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium UI Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M40 40l10-10 10 10-10 10-10-10zm-30-30l5-5 5 5-5 5-5-5zm60 0l5-5 5 5-5 5-5-5zm0 60l5-5 5 5-5 5-5-5zm-60 0l5-5 5 5-5 5-5-5zm30-15l7.5-7.5 7.5 7.5-7.5 7.5-7.5-7.5zm-15-15l7.5-7.5 7.5 7.5-7.5 7.5-7.5-7.5zM15 45l7.5-7.5 7.5 7.5-7.5 7.5-7.5-7.5zm30 0l7.5-7.5 7.5 7.5-7.5 7.5-7.5-7.5z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0) 0%,
+    rgba(212, 175, 55, 0.1) 50%,
+    rgba(212, 175, 55, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.premium-border {
+  position: relative;
+}
+
+.premium-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.overscroll-contain {
+  overscroll-behavior: contain;
+}
+
+/* Hide Number Input Spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Arabic Text Typography */
+[lang="ar"] {
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  line-height: 1.6;
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.overscroll-contain {
+  overscroll-behavior: contain;
+}
